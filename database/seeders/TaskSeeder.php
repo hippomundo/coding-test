@@ -50,7 +50,7 @@ class TaskSeeder extends Seeder
             ->sequence(
                 ['name' => 'Fix the Falcon\'s hyperdrive (again).'],
                 ['name' => 'Outsmart Imperial patrols while smuggling space \'stuff.\''],
-                ['name' => 'Shoot even faster so there\'s no discussion about who shot first.'],
+                ['name' => 'Remind Chewie to lower the ship\'s thermostat – It\'s not Hoth in here!'],
             )
             ->state(new Sequence(
                 fn (Sequence $sequence) => [ 
@@ -80,7 +80,7 @@ class TaskSeeder extends Seeder
             ->sequence(
                 ['name' => 'Keep the Falcon from falling apart mid-hyperspace jump.'],
                 ['name' => 'Help Han escape a bounty hunter ambush without roaring too much.'],
-                ['name' => 'Beat R2-D2 at dejarik and let him win (just once).'],
+                ['name' => 'Book Wookiee vocal lessons – surprise opera performance for Han.'],
             )
             ->state(new Sequence(
                 fn (Sequence $sequence) => [ 

@@ -19,10 +19,15 @@ class TaskController extends Controller
      */
     public function index()
     {
-        // return view('tasks.index', [
-        //     'phases' => \App\Models\Phase::with('tasks.user')->get(),
-        // ]);
         return \App\Models\Phase::with('tasks.user')->get();
+    }
+
+    /**
+     * Display a listing of the Users resource.
+     */
+    public function users()
+    {
+        return \App\Models\User::all();
     }
 
     /**
