@@ -1,11 +1,19 @@
 {
-    "name": "laravel/laravel",
+    "name": "hippomundo/coding-test",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
-    "keywords": ["laravel", "framework"],
+    "description": "A coding test for the engineering team of Hippomundo.",
+    "keywords": ["hippomundo", "coding-test"],
     "license": "MIT",
+    "authors": [
+        {
+            "name": "Hippomundo",
+            "email": "koen.calliauw@hippomundo.com"
+        }
+    ],
     "require": {
         "php": "^8.1",
+        "ext-mbstring": "*",
+        "ext-sqlite3": "*",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.2",

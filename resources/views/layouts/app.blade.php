@@ -15,10 +15,9 @@
         <script src="https://cdn.tailwindcss.com"></script>
         {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
         @vite(['resources/js/app.js'])
-        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     </head>
     <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100" id="app">
+        <div class="min-h-screen bg-gray-100">
             @include('layouts.navigation')
 
             <!-- Page Heading -->
@@ -31,7 +30,7 @@
             @endif
 
             <!-- Page Content -->
-            <main>
+            <main id="app">
                 {{ $slot }}
             </main>
         </div>

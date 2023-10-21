@@ -8,14 +8,21 @@ use App\Models\Task;
 
 class TaskController extends Controller
 {
+
+    public function kanban()
+    {
+        return view('tasks.index');
+    }
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('tasks.index', [
-            'phases' => \App\Models\Phase::with('tasks')->get(),
-        ]);
+        // return view('tasks.index', [
+        //     'phases' => \App\Models\Phase::with('tasks.user')->get(),
+        // ]);
+        return \App\Models\Phase::with('tasks.user')->get();
     }
 
     /**
