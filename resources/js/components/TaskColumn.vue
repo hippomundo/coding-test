@@ -1,14 +1,21 @@
 <template>
 <div class="w-[300px] bg-sky-950 rounded-lg shadow-lg">
     <div class="p-4">
-        <h2 class="text-lg text-zinc-100 font-black mb-3">{{ name }}</h2>
+        <div class="flex items-center justify-between">
+            <h2 class="text-lg text-zinc-100 font-black mb-3">{{ name }}</h2>
+            <PlusIcon 
+                @click="createTask()" 
+                class="mb-3 h-6 w-6 text-white hover:cursor-pointer" 
+                aria-hidden="true" />
+        </div>
         <task-card v-if="tasks.length > 0" v-for="task in tasks" :task="task" />
 
         <!-- A card to create a new task -->
-        <!-- <div class="w-full bg-white text-gray-900 hover:cursor-pointer shadow-md rounded-lg p-3 pb-8 mb-4 relative"
-            @click="kanban.creatingTask = true;">
-            Create a new task
-        </div> -->
+        <div class="w-full flex items-center justify-between bg-white text-gray-900 hover:cursor-pointer shadow-md rounded-lg p-3 mb-4 relative"
+            @click="createTask()">
+            <span>Create a new task</span>
+            <PlusIcon class="h-6 w-6" aria-hidden="true" />
+        </div>
 
     </div>
 </div>
@@ -17,9 +24,12 @@
 <script setup>
 // get the props
 import { ref, onMounted, nextTick } from 'vue'
+import { useKanbanStore } from '../stores/kanban'
+import { PlusIcon } from '@heroicons/vue/20/solid'
 
 const name = ref(null)
 const tasks = ref([])
+const kanban = useKanbanStore()
 
 const props = defineProps({
     phase_id: {
@@ -27,6 +37,11 @@ const props = defineProps({
         required: true
     },
 })
+
+const createTask = function () {
+    kanban.creatingTask = true;
+    kanban.creatingTaskProps.phase_id = this.props.phase_id;
+}
 
 const getTasks = async () => {
     try {
