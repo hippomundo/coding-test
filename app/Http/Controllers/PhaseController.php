@@ -37,7 +37,7 @@ class PhaseController extends Controller
      */
     public function show(Phase $phase)
     {
-        //
+        return $phase->load('tasks.user')->toJson();
     }
 
     /**

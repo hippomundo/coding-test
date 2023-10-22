@@ -12,7 +12,8 @@ export const useKanbanStore = defineStore('kanban', {
           name: '',
           phase_id: null,
           user_id: null,
-        }
+        },
+        self: null,
     }
   },
   actions: {
@@ -27,6 +28,6 @@ export const useKanbanStore = defineStore('kanban', {
     },
     hasSelectedTask() {
         return this.selectedTask !== null
-    }
+    },
   },
 })
