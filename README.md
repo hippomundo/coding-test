@@ -35,7 +35,7 @@ Note: Make sure that the port 8000 and 5173 are available on your machine.
 Below are the requirements for the test. You can use any tools or libraries you want, 
 but make sure to document your choices in the CHANGES.md file.
 
-- Send us a message on Upwork to let us know that you're starting the test.
+- Send us a message on the recruitment platform to let us know that you're starting the test.
 
 - Fork this project and make your fork private.
 
