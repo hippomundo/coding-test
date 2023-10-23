@@ -2,7 +2,7 @@
 <div class="w-[300px] bg-sky-950 rounded-lg shadow-lg">
     <div class="p-4">
         <div class="flex items-center justify-between">
-            <h2 class="text-lg text-zinc-100 font-black mb-3">{{ name }}</h2>
+            <h2 class="text-lg text-zinc-100 font-black mb-3">{{ kanban.phases[props.phase_id].name }}</h2>
             <PlusIcon 
                 @click="createTask()" 
                 class="mb-3 h-6 w-6 text-white hover:cursor-pointer" 
@@ -27,8 +27,6 @@ import { ref, onMounted, nextTick } from 'vue'
 import { useKanbanStore } from '../stores/kanban'
 import { PlusIcon } from '@heroicons/vue/20/solid'
 
-const name = ref(null)
-const tasks = ref([])
 const kanban = useKanbanStore()
 
 const props = defineProps({
