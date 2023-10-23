@@ -98,7 +98,7 @@
                     <TrashIcon class="w-6 h-6 absolute top-0 right-0 hover:cursor-pointer" @click="deleteCard(kanban.selectedTask.id)" />
                     <div class="flex justify-center">
                         <img class="w-16 h-16 shadow-lg rounded-full border-2 border-blue-800"
-                            :src="kanban.selectedTask.user.profile_picture_url" :alt="kanban.selectedTask.user.name" />
+                            :src="getAvatar(kanban.selectedTask.user)" :alt="kanban.selectedTask.user.name" />
                     </div>
                     <div class="mt-3 sm:mt-5">
                         <DialogTitle as="h3" class="text-base font-semibold leading-6 text-gray-900">{{ kanban.selectedTask.name }}</DialogTitle>
