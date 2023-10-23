@@ -16,27 +16,19 @@ docker compose run web composer install
 docker compose run web npm install
 docker compose run web php artisan key:generate
 docker compose run web php artisan migrate --seed
-docker compose run web npm run dev
-```
-
-Then, in another tab or window, run the PHP server:
-```
-docker compose run web php artisan serve
+docker compose up -d
 ```
 
 You should now be able to browse to http://localhost:8000 and see the project.
 Either you can register a new account in the system, or you can use the following 
-credentions to log in:
+credentions to log in (or any of the others generated in the UserSeeder):
 ```
 Email: Farmboy2Jedi@TheForce.net
 Pass:  password
 ```
 
-Note: Make sure that the port 8000 is available on your machine. If not, you can 
-change it in your .env file, and provide another port to listen on for the 
-artisan serve command. For example:
+Note: Make sure that the port 8000 and 5173 are available on your machine. 
 
-```docker compose run web php artisan serve --port=8001```
 
 ## The test
 
@@ -64,7 +56,7 @@ When a card is moved to one of the phases marked as such, the card should automa
  to your forked repository, or send us the ZIP file of your project without the vendor or 
  node_modules folders.
 
-## Fully optional
+## Fully optional,if you want to show your strentghs:
 
 - Allow the user to delete an entire column, and all cards in it
 
