@@ -8,10 +8,10 @@
                 class="mb-3 h-6 w-6 text-white hover:cursor-pointer" 
                 aria-hidden="true" />
         </div>
-        <task-card v-if="tasks.length > 0" v-for="task in tasks" :task="task" />
-
+        <task-card v-if="kanban.phases[props.phase_id].tasks.length > 0" v-for="task in kanban.phases[props.phase_id].tasks" :task="task" />
+        
         <!-- A card to create a new task -->
-        <div class="w-full flex items-center justify-between bg-white text-gray-900 hover:cursor-pointer shadow-md rounded-lg p-3 mb-4 relative"
+        <div class="w-full flex items-center justify-between bg-white text-gray-900 hover:cursor-pointer shadow-md rounded-lg p-3 relative"
             @click="createTask()">
             <span>Create a new task</span>
             <PlusIcon class="h-6 w-6" aria-hidden="true" />
@@ -42,20 +42,5 @@ const createTask = function () {
     kanban.creatingTask = true;
     kanban.creatingTaskProps.phase_id = this.props.phase_id;
 }
-
-const getTasks = async () => {
-    try {
-        const response = await axios.get('/api/phases/' + props.phase_id);
-        tasks.value = response.data.tasks;
-        name.value = response.data.name;
-    } catch (error) {
-        console.error('There was an error fetching the tasks!', error);
-    }
-}
-
-onMounted(async () => {
-    await getTasks();
-    await nextTick();
-})
 
 </script>

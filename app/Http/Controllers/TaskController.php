@@ -43,7 +43,8 @@ class TaskController extends Controller
      */
     public function store(StoreTaskRequest $request)
     {
-        //
+        // Create a new task from the $request
+        $task = Task::create($request->validated());
     }
 
     /**
@@ -75,6 +76,6 @@ class TaskController extends Controller
      */
     public function destroy(Task $task)
     {
-        //
+        Task::destroy($task->id);
     }
 }
