@@ -16,3 +16,5 @@ npm install
 npm run dev
 php artisan serve
 ```
+
+Make sure that the port 8000 is available on your machine. If not, you can change it in the .env file, and provide another port to listen on for the artisan serve command.
