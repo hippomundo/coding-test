@@ -23,7 +23,6 @@
 
 <script setup>
 // get the props
-import { ref, onMounted, nextTick } from 'vue'
 import { useKanbanStore } from '../stores/kanban'
 import { PlusIcon } from '@heroicons/vue/20/solid'
 
@@ -38,7 +37,7 @@ const props = defineProps({
 
 const createTask = function () {
     kanban.creatingTask = true;
-    kanban.creatingTaskProps.phase_id = this.props.phase_id;
+    kanban.creatingTaskProps.phase_id = props.phase_id;
 }
 
 </script>

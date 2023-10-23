@@ -20,7 +20,7 @@ const getAvatar = function () {
     if (props.task.user.profile_picture_url !== null) {
         return props.task.user.profile_picture_url;
     } else {
-        return ("https://www.gravatar.com/avatar/" + sha256(String(props.task.user.email).trim().toLowerCase()) + "?size=400");
+        return ("https://www.gravatar.com/avatar/" + sha256(String(props.task.user.email).trim().toLowerCase()) + "?size=40");
     }
 }
 
