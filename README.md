@@ -56,23 +56,23 @@ When a card is moved to one of the phases marked as such, the card should automa
  to your forked repository, or send us the ZIP file of your project without the vendor or 
  node_modules folders.
 
-## Fully optional,if you want to show your strentghs:
+## Fully optional, opportunity to impress us even more 
 
 - Allow the user to delete an entire column, and all cards in it
 
 - Maybe you can find bugs or make performance improvements, or improve the UX?
 
-- Add single-column vertical scroll to the board, so that the board can be longer than the 
- screen without adding a scrollbar to the entire page
+- Add single-column vertical scroll to the board, so that the board can be longer than 
+the screen without adding a scrollbar to the entire page
 
 - Create an extra page in the application that display some statistics, for example:
     - Number of cards assigned for each user
     - Number of cards completed this week
     - Number of cards completed this month
 
-- Maybe you just want to make us say "wow" by adding a feature that you think would be cool to have in a project 
- like this. It can be anything you want, as long as it's not trivial. For example, you 
+- Maybe you just want to make us say "wow" by adding a feature that you think would be 
+ cool to have in a project like this. It can be anything you want. For example, you 
  could add a way to add a due date to a card, and then highlight cards that are overdue. 
  Or you could add a way to add a description to a card, and then show the description 
- when the card is clicked. Or you could add a way to add a background image to a card. Maybe you want to add validation to the input forms?
- etc. etc. etc. Be creative!
+ when the card is clicked. Or you could add a way to add a background image to a card. 
+ Maybe you want to add validation to the input forms? etc. etc. etc. Be creative!
