@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreTaskRequest;
 use App\Http\Requests\UpdateTaskRequest;
+use App\Models\Phase;
 use App\Models\Task;
 
 class TaskController extends Controller
@@ -19,7 +20,7 @@ class TaskController extends Controller
      */
     public function index()
     {
-        return \App\Models\Phase::with('tasks.user')->get();
+        return \App\Models\Phase::withCount('tasks')->with('tasks.user')->get();
     }
 
     /**
@@ -68,7 +69,16 @@ class TaskController extends Controller
      */
     public function update(UpdateTaskRequest $request, Task $task)
     {
-        //
+        $phase  = Phase::find($request->input('phase_id'));
+        if($phase->is_completion and is_null($task->completed_at)){
+            $task->completed_at = now();
+        }
+
+        $task->name = $request->input('name');
+        $task->phase_id = $request->input('phase_id');
+        $task->user_id = $request->input('user_id');
+
+        $task->save();
     }
 
     /**
