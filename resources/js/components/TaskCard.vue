@@ -1,8 +1,9 @@
 <template>
-    <div class="w-full bg-white text-gray-900 shadow-md rounded-lg p-3 pb-8 mb-4 relative"
-        @mouseenter="kanban.hoveredName = task.name" 
+    <div :class="{ 'bg-green-300' : task.completed_at}" class="w-full bg-white text-gray-900 shadow-md rounded-lg p-3 pb-8 mb-4 relative"
+        @mouseenter="kanban.hoveredName = task.name"
         @mouseleave="kanban.unhoverTask()"
         @click="kanban.selectTask(task)">
+        <p v-if="task.completed_at" class="text-xs mb-2">Completed at: {{ task.completed_at }}</p>
         {{ task.name }}<br>
         <div class="text-xs text-gray-500 absolute bottom-2 ">{{ task.user.name }}</div>
         <img class="w-10 h-10 shadow-lg rounded-full absolute bottom-0 right-0 -mr-2 -mb-2 border-2 border-white"

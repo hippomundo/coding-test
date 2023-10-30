@@ -53,7 +53,8 @@ class PhaseController extends Controller
      */
     public function update(UpdatePhaseRequest $request, Phase $phase)
     {
-        //
+        $phase->phase_id = $request->input('phase_id');
+        $phase->save();
     }
 
     /**
@@ -61,6 +62,10 @@ class PhaseController extends Controller
      */
     public function destroy(Phase $phase)
     {
-        //
+        // delete tasks
+        $phase->tasks()->delete();
+
+        // delete phase
+        $phase->delete();
     }
 }
