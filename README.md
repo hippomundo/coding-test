@@ -37,7 +37,7 @@ but make sure to document your choices in the CHANGES.md file.
 
 - Send us a message on the recruitment platform to let us know that you're starting the test.
 
-- Fork this project and make your fork private.
+- Create a new private repository with this repo as the content
 
 - Add a way to edit existing cards (Change the name, assignee, or phase)
 
